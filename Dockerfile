@@ -38,8 +38,8 @@ RUN yum -y update && yum install \
 
 #RUN yum clean all
 
-#COPY requirements.txt /usr/src/app/requirements.txt
-#RUN pip install -r /usr/src/app/requirements.txt
+COPY requirements.txt /usr/src/app/requirements.txt
+RUN pip install -r /usr/src/app/requirements.txt
 
 # setup wsgi_module
 #RUN echo "LoadModule wsgi_module /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi-py35.cpython-35m-x86_64-linux-gnu.so" > /etc/apache2/mods-available/wsgi_express.load
