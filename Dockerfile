@@ -6,8 +6,8 @@ FROM mbaltrusitis/centos-python:3.5
 #ENV http_caching  packages
 
 
-#ENV LANG en_US.UTF-8
-#CMD ["/bin/bash"]
+ENV LANG en_US.UTF-8
+CMD ["/bin/bash"]
 
 
 RUN mkdir -p /usr/src/app
@@ -21,22 +21,15 @@ WORKDIR /usr/src/app
 #                apache2 apache2-dev \
 #        --no-install-recommends && rm -rf /var/lib/apt/lists/* && yum clean all
 
-#RUN yum -y install gcc
-#RUN yum -y install gettext
-#RUN yum -y install vim
-#RUN yum -y install postgresql-client postgresql-libs
+RUN yum -y install gcc
+RUN yum -y install gettext
+RUN yum -y install vim
+RUN yum -y install postgresql-client postgresql-libs
 #RUN yum -y clean metadata 
-#RUN yum -y provides '*/applydeltarpm'
-#RUN yum -y install deltarpm
-RUN yum -y update && yum install \
-							gcc \
-							gettext \
-							vim \
-							postgresql-client postgresql-libs \
-              httpd httpd-devel \
-           --no-install-recommends && yum clean all
-
-#RUN yum clean all
+RUN yum -y provides '*/applydeltarpm'
+RUN yum -y install deltarpm
+RUN yum -y install httpd httpd-devel          
+RUN yum clean all
 
 COPY requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r /usr/src/app/requirements.txt
