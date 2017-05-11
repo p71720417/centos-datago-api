@@ -26,7 +26,7 @@ RUN yum -y install gettext
 RUN yum -y install vim
 RUN yum -y install postgresql-client postgresql-libs
 #RUN yum -y clean metadata 
-RUN yum -y provides '*/applydeltarpm'
+RUN yum -y install provides '*/applydeltarpm'
 RUN yum -y install deltarpm
 RUN yum -y install httpd httpd-devel          
 RUN yum clean all
