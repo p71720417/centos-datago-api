@@ -4,10 +4,10 @@ FROM mbaltrusitis/centos-python:3.5
 #ENV https_proxy  http://10.144.156.1:8080 
 
 #ENV http_caching  packages
+ENV deltarpm 0
 
-
-#ENV LANG en_US.UTF-8
-#CMD ["/bin/bash"]
+ENV LANG en_US.UTF-8
+CMD ["/bin/bash"]
 
 #RUN yum clean all && yum swap fakesystemd systemd -y
 
@@ -23,7 +23,7 @@ WORKDIR /usr/src/app
 #        --no-install-recommends && rm -rf /var/lib/apt/lists/* && yum clean all
 
 RUN yum -y install provides '*/applydeltarpm'
-RUN yum -y install deltarpm
+#RUN yum -y install deltarpm
 RUN yum -y install yum-plugin-ovl
 RUN yum -y install gcc
 RUN yum -y install gettext
