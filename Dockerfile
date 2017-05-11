@@ -41,5 +41,5 @@ RUN a2enmod wsgi_express
 
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
-develop:8080(runserver), production:80(httpd) 
+#develop:8080(runserver), production:80(httpd) 
 EXPOSE 8080 80
