@@ -24,9 +24,8 @@ WORKDIR /usr/src/app
 
 #RUN yum -y install provides '*/applydeltarpm'
 #RUN yum -y install deltarpm
-RUN -y update \
-    && yum -y install yum-plugin-ovl \
-    && yum -y install gcc
+RUN yum -y install yum-plugin-ovl
+RUN yum -y install gcc
 RUN yum -y install gettext
 RUN yum -y install vim
 RUN yum -y install postgresql-client postgresql-libs
