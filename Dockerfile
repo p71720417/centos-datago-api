@@ -39,7 +39,7 @@ RUN pip install -r /usr/src/app/requirements.txt
 RUN echo "LoadModule wsgi_module /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi-py35.cpython-35m-x86_64-linux-gnu.so" > /etc/apache2/mods-available/wsgi_express.load
 RUN a2enmod wsgi_express
 
-#COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 develop:8080(runserver), production:80(httpd) 
 EXPOSE 8080 80
