@@ -1,12 +1,12 @@
-FROM mbaltrusitis/centos-python:3.5
+FROM centos/python-35-centos7:latest
 
 #ENV http_proxy  http://10.144.156.1:8080 
 #ENV https_proxy  http://10.144.156.1:8080 
 
-ENV LANG en_US.UTF-8
-CMD ["/bin/bash"]
+#ENV LANG en_US.UTF-8
+#CMD ["/bin/bash"]
 
-RUN yum clean all && yum swap fakesystemd systemd -y
+#RUN yum clean all && yum swap fakesystemd systemd -y
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
