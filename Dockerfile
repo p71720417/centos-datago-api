@@ -9,6 +9,7 @@ FROM mbaltrusitis/centos-python:3.5
 ENV LANG en_US.UTF-8
 CMD ["/bin/bash"]
 
+RUN yum clean all && yum swap fakesystemd systemd -y
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
