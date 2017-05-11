@@ -6,10 +6,10 @@ FROM mbaltrusitis/centos-python:3.5
 #ENV http_caching  packages
 
 
-ENV LANG en_US.UTF-8
-CMD ["/bin/bash"]
+#ENV LANG en_US.UTF-8
+#CMD ["/bin/bash"]
 
-RUN yum clean all && yum swap fakesystemd systemd -y
+#RUN yum clean all && yum swap fakesystemd systemd -y
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -22,9 +22,11 @@ WORKDIR /usr/src/app
 #                apache2 apache2-dev \
 #        --no-install-recommends && rm -rf /var/lib/apt/lists/* && yum clean all
 
-RUN yum -y install provides '*/applydeltarpm'
-RUN yum -y install deltarpm
-RUN yum -y install gcc
+#RUN yum -y install provides '*/applydeltarpm'
+#RUN yum -y install deltarpm
+RUN -y update \
+    && yum -y install yum-plugin-ovl \
+    && yum -y install gcc
 RUN yum -y install gettext
 RUN yum -y install vim
 RUN yum -y install postgresql-client postgresql-libs
