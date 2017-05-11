@@ -22,13 +22,13 @@ WORKDIR /usr/src/app
 #                apache2 apache2-dev \
 #        --no-install-recommends && rm -rf /var/lib/apt/lists/* && yum clean all
 
+RUN yum -y install provides '*/applydeltarpm'
+RUN yum -y install deltarpm
 RUN yum -y install gcc
 RUN yum -y install gettext
 RUN yum -y install vim
 RUN yum -y install postgresql-client postgresql-libs
 #RUN yum -y clean metadata 
-RUN yum -y install provides '*/applydeltarpm'
-RUN yum -y install deltarpm
 RUN yum -y install httpd httpd-devel          
 RUN yum clean all
 
