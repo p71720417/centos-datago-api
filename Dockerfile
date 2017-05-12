@@ -19,9 +19,8 @@ WORKDIR /usr/src/app
 #                apache2 apache2-dev \
 #        --no-install-recommends && rm -rf /var/lib/apt/lists/* && yum clean all
 
-
-RUN yum -y update 
 RUN yum -y install yum-plugin-ovl
+RUN yum update 
 RUN yum -y install gcc
 RUN yum -y install gettext
 RUN yum -y install vim
