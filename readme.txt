@@ -1,2 +1,8 @@
-gitlab¤U¸ü«á¦pªG¦³¯Ê¥~³¡¼Ò²Õ¡A½Ð°õ¦æ
+æ¸¬è©¦ç’°å¢ƒ
+docker run -p 18088:8080 --add-host="cjas.local:10.144.226.122" --name cjas-dev-api -v /home/cjas/cjas-api/CJAS:/usr/src/app -d cjas/api python manage.py runserver 0.0.0.0:8080
+
+ä¸Šç·šç’°å¢ƒ
+docker run -d -p 18088:80 --add-host="cjas.local:10.144.226.122" --name cjas-prod-api -v /home/cjas/cjas-api/CJAS:/usr/src/app cjas/api /usr/sbin/apache2ctl -D FOREGROUND
+
+gitlabä¸‹è¼‰å¾Œå¦‚æžœæœ‰ç¼ºå¤–éƒ¨æ¨¡çµ„ï¼Œè«‹åŸ·è¡Œ
 pip install -r /path/to/requirement.txt
