@@ -20,13 +20,14 @@ WORKDIR /usr/src/app
 #        --no-install-recommends && rm -rf /var/lib/apt/lists/* && yum clean all
 
 
-RUN yum -y update && yum install yum-plugin-ovl
-RUN yum install gcc
-RUN yum install gettext
-RUN yum install vim
-RUN yum install postgresql postgresq-server postgresq-contrib postgresql-libs
-RUN yum install httpd httpd-devel          
-RUN yum clean all
+RUN yum -y update 
+RUN yum -y install yum-plugin-ovl
+RUN yum -y install gcc
+RUN yum -y install gettext
+RUN yum -y install vim
+RUN yum -y install postgresql postgresq-server postgresq-contrib postgresql-libs
+RUN yum -y install httpd httpd-devel          
+RUN yum -y clean all
 
 COPY requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r /usr/src/app/requirements.txt
