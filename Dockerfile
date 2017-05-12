@@ -1,12 +1,12 @@
-FROM centos/python-35-centos7:latest
+FROM mbaltrusitis/centos-python:3.5
 
 #ENV http_proxy  http://10.144.156.1:8080 
 #ENV https_proxy  http://10.144.156.1:8080 
 
-#ENV LANG en_US.UTF-8
-#CMD ["/bin/bash"]
+ENV LANG en_US.UTF-8
+CMD ["/bin/bash"]
 
-#RUN yum clean all && yum swap fakesystemd systemd -y
+RUN yum clean all && yum swap fakesystemd systemd -y
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -21,11 +21,11 @@ WORKDIR /usr/src/app
 
 
 RUN yum -y update && yum install yum-plugin-ovl
-RUN yum -y update && yum install gcc
-RUN yum -y update && yum install gettext
-RUN yum -y update && yum install vim
-RUN yum -y update && yum install postgresql postgresq-server postgresq-contrib postgresql-libs
-RUN yum -y update && yum install httpd httpd-devel          
+RUN yum install gcc
+RUN yum install gettext
+RUN yum install vim
+RUN yum install postgresql postgresq-server postgresq-contrib postgresql-libs
+RUN yum install httpd httpd-devel          
 RUN yum clean all
 
 COPY requirements.txt /usr/src/app/requirements.txt
