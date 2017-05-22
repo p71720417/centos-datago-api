@@ -10,4 +10,8 @@ requests==2.13.0
 apscheduler==3.3.1
 teradata==15.10.0.21
 sqlalchemy-teradata==0.0.9.dev0
-
+impyla==0.14.0
+thrift_sasl==0.2.1
+thriftpy==0.3.9
+six==1.10.0
+statsd

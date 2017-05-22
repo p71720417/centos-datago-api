@@ -27,15 +27,15 @@ RUN yum -y install vim
 RUN yum -y install postgresql postgresq-server postgresq-contrib postgresql-libs
 RUN yum -y install httpd 
 RUN yum -y install httpd-devel 
-RUN yum -y install mod_wsgi         
+#RUN yum -y install mod_wsgi         
 RUN yum -y clean all
 
 COPY requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r /usr/src/app/requirements.txt
 
 # setup wsgi_module
-RUN echo "LoadModule wsgi_module /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi-py35.cpython-35m-x86_64-linux-gnu.so" > /etc/httpd/modules/mod_wsgi.so
-RUN a2enmod mod_wsgi.so
+#RUN echo "LoadModule wsgi_module /usr/lib64/httpd/modules/mod_wsgi-py35.cpython-35m-x86_64-linux-gnu.so" > /etc/httpd/modules/mod_wsgi.so
+#RUN a2enmod mod_wsgi.so
 
 COPY 000-default.conf /etc/httpd/sites-enabled/000-default.conf
 
