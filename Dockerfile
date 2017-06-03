@@ -1,4 +1,5 @@
-FROM mbaltrusitis/centos-python:3.5
+FROM kunitaya/anaconda3
+#FROM mbaltrusitis/centos-python:3.5
 
 ENV LANG en_US.UTF-8
 
