@@ -10,9 +10,8 @@ RUN yum -y install gcc
 RUN yum -y install gettext
 RUN yum -y install krb5-devel
 RUN yum -y install postgresql postgresq-server postgresq-contrib postgresql-libs
-#RUN yum -y install httpd 
-#RUN yum -y install httpd-devel.x86_64 
-#RUN yum -y install mod_wsgi
+RUN yum -y install httpd 
+RUN yum -y install httpd-devel
 RUN yum -y install gcc-c++         
 RUN yum -y clean all
 
