@@ -12,6 +12,7 @@ RUN yum -y install krb5-devel
 RUN yum -y install postgresql postgresq-server postgresq-contrib postgresql-libs
 RUN yum -y install httpd 
 RUN yum -y install httpd-devel
-RUN yum -y install gcc-c++         
+RUN yum -y install gcc-c++ 
+RUN yum -y install telnet        
 RUN yum -y clean all
 
