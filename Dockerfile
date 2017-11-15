@@ -18,6 +18,6 @@ RUN yum -y install glib*
 RUN yum -y install glibc.i686
 RUN yum -y install libstdc++* 
 RUN yum -y install libstdc++.i686  
-RUN yum -y install libgcc.i386  
+RUN yum -y install libgcc.i686  
 RUN yum -y clean all
 
