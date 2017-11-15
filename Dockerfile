@@ -14,6 +14,8 @@ RUN yum -y install httpd
 RUN yum -y install httpd-devel
 RUN yum -y install gcc-c++ 
 RUN yum -y install telnet 
-RUN yum -y install glib*       
+RUN yum -y install glib*  
+RUN yum -y install glibc.i686
+RUN yum -y install libstdc++*     
 RUN yum -y clean all
 
